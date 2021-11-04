@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import Styles from './styles/styles.css'
+import App from './App.jsx';
+import styles from './styles/styles.css'
+
 
 
 ReactDOM.render(
   
-    <App />,
+    <App />
+  ,
   
   document.getElementById('root')
 );

@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fondo1{
+	background-color: #0b184b;
+	
+}
