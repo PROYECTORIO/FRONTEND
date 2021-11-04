@@ -1,8 +1,9 @@
-import React from "react";
+import react from "react";
+
 
 function App() {
   return (
-    <div>
+    <div> 
       <h1>PROYECTORIO APP</h1>
     </div>
   );
