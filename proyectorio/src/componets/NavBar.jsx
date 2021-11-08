@@ -13,9 +13,9 @@ const NavBar = () => {
     
       <div id='menu' className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
-            <a href="#banner" className="block mt-4 lg:inline-block lg:mt-0 transform hover:translate-y-1 transition-transform ease-in duration-200 text-gray-100 hover:text-gray-400 m-2 p-2">Inicio</a>
-            <a href="#trabajo" className="block mt-4 lg:inline-block lg:mt-0 transform hover:translate-y-1 transition-transform ease-in duration-200 text-gray-100 hover:text-gray-400 m-2 p-2">Proyectos</a>
-            <a href="#procesadores" className="block mt-4 lg:inline-block lg:mt-0 transform hover:translate-y-1 transition-transform ease-in duration-200 text-gray-100 hover:text-gray-400 m-2 p-2">Equipo</a>
+            <a href="#inicio" className="block mt-4 lg:inline-block lg:mt-0 transform hover:translate-y-1 transition-transform ease-in duration-200 text-gray-100 hover:text-gray-400 m-2 p-2">Inicio</a>
+            <a href="#proyectos" className="block mt-4 lg:inline-block lg:mt-0 transform hover:translate-y-1 transition-transform ease-in duration-200 text-gray-100 hover:text-gray-400 m-2 p-2">Proyectos</a>
+            <a href="#equipo" className="block mt-4 lg:inline-block lg:mt-0 transform hover:translate-y-1 transition-transform ease-in duration-200 text-gray-100 hover:text-gray-400 m-2 p-2">Equipo</a>
             <a href="#contacto" className="block mt-4 lg:inline-block lg:mt-0 transform hover:translate-y-1 transition-transform ease-in duration-200 text-gray-100 hover:text-gray-400 m-2 p-2">Contacto</a>
         </div>
 

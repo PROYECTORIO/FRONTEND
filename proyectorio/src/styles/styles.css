@@ -4,8 +4,11 @@
 
 .fondo1{
 	background-color: #0b184b;
+	opacity: 0.91;
 	
 }
+
+
 
 .fondo-cover {
 	background-image: url("../media/cover.jpeg");
@@ -17,4 +20,16 @@
 
 .svg1{
 	height: 70px;
+}
+
+.svg2{
+	height: 80px;
+}
+
+.asesores{
+	max-width: 120px;
+}
+
+.transicion{
+	transition: all 0.15s ease 0s;
 }
