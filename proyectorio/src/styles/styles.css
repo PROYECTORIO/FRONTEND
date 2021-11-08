@@ -6,3 +6,15 @@
 	background-color: #0b184b;
 	
 }
+
+.fondo-cover {
+	background-image: url("../media/cover.jpeg");
+}
+
+.altura-cover{
+	min-height: 75vh;
+}
+
+.svg1{
+	height: 70px;
+}
