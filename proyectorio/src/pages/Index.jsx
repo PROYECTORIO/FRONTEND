@@ -57,7 +57,7 @@ const Index = () => {
       </div>
 
       {/* CARDS */}
-      <section className="pb-20 bg-gray-300 -mt-24">
+      <section className="pb-20 bg-gray-300 -mt-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap">
 
@@ -108,11 +108,9 @@ const Index = () => {
               
           </div>
         </div>
-
       </section>
 
       {/* PROYECTOS */}
-     
       <section id="proyectos" className="relative py-20">
           {/* División svg */}
           <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 svg2">
@@ -294,7 +292,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+     
       {/* ASESORES */}
       <section id="equipo" className="pt-20 pb-48">
         <div className="container mx-auto px-4">
@@ -426,7 +424,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-
+      
       {/* CONTACTO */}
       <section id="contacto" className="pb-20 relative block bg-gray-900">
         <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 svg2">
@@ -522,15 +520,17 @@ const Index = () => {
         </div>
       </section>
 
-      
-
-
-
     </main>
-
   </body>
-  
+
   </div>;
 };
 
 export default Index;
+
+      
+
+
+
+
+  

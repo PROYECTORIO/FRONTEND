@@ -2,16 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .fondo1{
 	background-color: #0b184b;
 	opacity: 0.91;
 	
 }
 
-
-
 .fondo-cover {
-	background-image: url("../media/cover.jpeg");
+	background-image: url("../media/cover2.jpeg");
 }
 
 .altura-cover{
@@ -33,3 +32,4 @@
 .transicion{
 	transition: all 0.15s ease 0s;
 }
+

@@ -2,9 +2,12 @@ import React from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import { useUser } from 'context/userContext';
 
+
 const Admin = () => {
   const { user } = useAuth0();
   const { userData } = useUser();
+  
+  
   return <div>
         <section className="relative block" style={{ height: "500px" }}>
           <h1 className="pt-20 mb-0 text-xl text-gray-800 text-center">¡Bienvenido!</h1>
@@ -25,15 +28,20 @@ const Admin = () => {
         </section>
         <section className="relative py-16 ">
           <div className="container mx-auto px-4">
-            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+          
+            <div className="relative flex flex-col min-w-0 break-words bg-gray-200 w-full mb-6 shadow-xl rounded-lg -mt-64">
               <div className="px-6">
+                <button className='flex mt-2 float-right text-gray-500 hover:text-yellow-600'>
+                  <i className="fas fa-edit justify-self-end"></i>
+                </button>
                 <div className="flex flex-wrap justify-center">
                   <div  className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                     <div className="relative">
-                      <img alt="..." src={user.picture} class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
-                        style={{ maxWidth: "250px" }}/>
+                      <img alt="Perfil" src={user.picture} class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
+                        style={{ maxWidth: "150px" }}/>
                     </div>
                   </div>
+                  
                   <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
                     <div className="py-6 px-3 mt-32 sm:mt-0"></div>
                   </div>
@@ -48,7 +56,11 @@ const Admin = () => {
                   <i className="fas fa-user-tag mr-2 text-lg text-gray-500"></i>{userData.rol}
                 </div>
                 <div className="text-xs leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
-                  <i className="fas fa-info-circle mr-2 text-md text-gray-500"></i>{userData.estado}
+                  <i className="fas fa-info-circle mr-2 text-lg text-gray-500"></i>
+                  <span className={userData.estado === 'Autorizado' ? 'relative inline-block m-4 px-2 py-2 leading-tight bg-green-500 text-white text-center text-sm font-semibold opacity-80 rounded-full':'relative inline-block m-4 px-3 py-2 leading-tight bg-yellow-500 text-white text-center text-sm font-semibold opacity-80 rounded-full'}>{userData.estado}</span>
+                </div>
+                <div className="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
+                  <i className="fas fa-id-card mr-2 text-md text-gray-500"></i>{userData._id}
                 </div>
                 <div className="mb-2 text-gray-700 mt-10">
                   <i className="fas fa-at mr-2 text-lg text-gray-500"></i>{user.email}
@@ -58,13 +70,8 @@ const Admin = () => {
           </div>
         </section>
   
-  
-  
-  
-  
-  
-  
 </div>;
+  
 };
 
 export default Admin;
