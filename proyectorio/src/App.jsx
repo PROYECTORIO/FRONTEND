@@ -1,6 +1,6 @@
 import React from "react";
 import { useState} from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Auth0Provider } from "@auth0/auth0-react";
 import { UserContext } from "context/userContext";
 
@@ -15,7 +15,7 @@ import Index from './pages/Index';
 import Error404 from "pages/Error404";
 import Usuarios from './pages/admin/Usuarios';
 import Proyectos from './pages/admin/Proyectos';
-import Admin from "pages/admin/Perfil";
+import Perfil from "pages/admin/Perfil";
 import Avances from "pages/admin/Avances";
 
 
@@ -31,28 +31,46 @@ function App() {
       audience='autenticacion-proyectorio'>
 
       <div className='App'>
-        <UserContext.Provider value={{ userData, setUserData }}> 
-          <Router>
-            <Switch>
 
-            <Route path={['/admin', '/admin/proyectos', '/admin/usuarios' ]}>
-              <PrivateLayout>
-                <Switch>
-                  <Route path='/admin/proyectos'>
-                    <Proyectos/>
-                  </Route>  
-                  <Route path='/admin/usuarios'>
-                    <Usuarios/>
-                  </Route>
-                  <Route path='/admin/avances'>
-                    <Avances/>
-                  </Route>
-                  <Route path='/admin'>
-                    <Admin />
-                  </Route>
-                </Switch>
-              </PrivateLayout>
-            </Route>
+        <UserContext.Provider value={{ userData, setUserData }}> 
+
+          <Router>
+
+            <Routes>
+              <Route exact path='/' element={<PublicLayout/>}>
+                <Route path='' element={<Index/>} />
+              </Route>
+            
+              <Route path='/admin' element={<PrivateLayout/>}>
+                <Route path='' element={<Perfil/>} />
+                <Route path='usuarios' element={<Usuarios/>}/>
+                <Route path='proyectos' element={<Proyectos/>}/>
+                <Route path='avances' element={<Avances/>}/>
+              </Route>
+
+              <Route path='*' element={<AuthLayout/>}>
+                <Route path='error404' element={<Error404/>} />
+              </Route>
+
+
+              {/* <Route path={['/admin', '/admin/proyectos', '/admin/usuarios' ]}>
+                <PrivateLayout>
+                  <Switch>
+                    <Route path='/admin/proyectos'>
+                      <Proyectos/>
+                    </Route>  
+                    <Route path='/admin/usuarios'>
+                      <Usuarios/>
+                    </Route>
+                    <Route path='/admin/avances'>
+                      <Avances/>
+                    </Route>
+                    <Route path='/admin'>
+                      <Admin />
+                    </Route>
+                  </Switch>
+                </PrivateLayout>
+              </Route>
 
               <Route exact path={['/']}>
                 <PublicLayout>
@@ -68,9 +86,9 @@ function App() {
                     <Error404/>
                   </Route>
                 </AuthLayout>
-              </Route>
+              </Route> */}
 
-            </Switch>
+            </Routes>
           </Router>
         </UserContext.Provider>
       </div>
