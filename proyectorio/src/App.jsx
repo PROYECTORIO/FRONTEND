@@ -15,6 +15,7 @@ import Error404 from "pages/Error404";
 import Usuarios from './pages/admin/Usuarios';
 import Proyectos from './pages/admin/Proyectos';
 import Perfil from "pages/admin/Perfil";
+import Inscripciones from "pages/admin/Inscripciones";
 import Avances from "pages/admin/Avances";
 
 
@@ -23,6 +24,7 @@ import Avances from "pages/admin/Avances";
 function App() {
   const [userData, setUserData] = useState({});
   return (
+
     <Auth0Provider
       domain="ezequiellr.us.auth0.com"
       clientId="0b1BbovaR2Sm4kaPTWwnNgr13Fayd0fV"
@@ -44,6 +46,7 @@ function App() {
                 <Route path='' element={<Perfil/>}/>
                 <Route path='usuarios' element={<Usuarios/>}/>
                 <Route path='proyectos' element={<Proyectos/>}/>
+                <Route path='inscripciones' element={<Inscripciones/>}/>
                 <Route path='avances' element={<Avances/>}/>
               </Route>
 
