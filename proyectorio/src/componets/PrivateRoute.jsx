@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import ReactLoading from 'react-loading';
-import AuthLayout from "layouts/AuthLayout";
+import { Outlet } from 'react-router';
+import NavAuth from '../componets/NavbarAuth';
+import Footer from './Footer';
 import { obtenerDatosUsuario } from 'utils/api';
 import { useUser } from 'context/userContext';
 
@@ -38,8 +40,11 @@ const PrivateRoute = ({ children }) => {
     if (isLoading) return <div><h1 className='text-3xl font-extrabold'>Cargando...</h1><ReactLoading type='spin' color='#11172d' height={467} width={175} /></div>;
   
     if (!isAuthenticated) {
-      return <div>
-      <AuthLayout>
+      return <div className='flex flex-col justify-between h-screen'>
+      
+      <NavAuth/>
+
+      <main className='h-full w-full overflow-y-scroll bg-black'>
         <div className='flex flex-col justify-center pt-40  w-full py-4 text-center font-bold'>
           <div className="pb-6 text-6xl text-red-600">
             <h1>ERROR DE AUTENTICACIÓN</h1>
@@ -49,7 +54,10 @@ const PrivateRoute = ({ children }) => {
             <h2>Sin Autenticarte Primero.</h2>
           </div>
         </div>
-      </AuthLayout>
+      </main>
+
+      <Footer/>
+      
     </div>;
     }
   

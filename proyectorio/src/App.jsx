@@ -8,7 +8,6 @@ import { UserContext } from "context/userContext";
 //Layouts
 import PublicLayout from './layouts/PublicLayout';
 import PrivateLayout from "layouts/PrivateLayout";
-import AuthLayout from "layouts/AuthLayout";
 
 //Pages
 import Index from './pages/Index';
@@ -30,68 +29,32 @@ function App() {
       redirectUri="http://localhost:3000/admin"
       audience='autenticacion-proyectorio'>
 
-      <div className='App'>
 
         <UserContext.Provider value={{ userData, setUserData }}> 
 
           <Router>
-
+      
             <Routes>
+
               <Route exact path='/' element={<PublicLayout/>}>
                 <Route path='' element={<Index/>} />
               </Route>
             
               <Route path='/admin' element={<PrivateLayout/>}>
-                <Route path='' element={<Perfil/>} />
+                <Route path='' element={<Perfil/>}/>
                 <Route path='usuarios' element={<Usuarios/>}/>
                 <Route path='proyectos' element={<Proyectos/>}/>
                 <Route path='avances' element={<Avances/>}/>
               </Route>
 
-              <Route path='*' element={<AuthLayout/>}>
-                <Route path='error404' element={<Error404/>} />
-              </Route>
-
-
-              {/* <Route path={['/admin', '/admin/proyectos', '/admin/usuarios' ]}>
-                <PrivateLayout>
-                  <Switch>
-                    <Route path='/admin/proyectos'>
-                      <Proyectos/>
-                    </Route>  
-                    <Route path='/admin/usuarios'>
-                      <Usuarios/>
-                    </Route>
-                    <Route path='/admin/avances'>
-                      <Avances/>
-                    </Route>
-                    <Route path='/admin'>
-                      <Admin />
-                    </Route>
-                  </Switch>
-                </PrivateLayout>
-              </Route>
-
-              <Route exact path={['/']}>
-                <PublicLayout>
-                  <Route exact path='/'>
-                    <Index />
-                  </Route>
-              </PublicLayout>
-              </Route>
+              <Route path='*' element={<Error404/>}/>
                 
-              <Route path={['*']}>
-                <AuthLayout>
-                  <Route path='*'>
-                    <Error404/>
-                  </Route>
-                </AuthLayout>
-              </Route> */}
-
             </Routes>
+
           </Router>
+          
         </UserContext.Provider>
-      </div>
+      
     </Auth0Provider>
   );
 }
