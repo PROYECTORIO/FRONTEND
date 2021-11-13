@@ -14,7 +14,7 @@ const Sidebar = () => {
 
 
 <div className="min-h-screen flex flex-row fondo1  text-gray-300">
-  <div className="flex flex-col w-72 overflow-hidden">
+  <div className="flex flex-col w-64 overflow-hidden">
     <div className="flex flex-col items-center justify-center h-20 ">
       <div ><img className="px-2 pt-40 mt-40 " src={Logo} alt="logo" width="100" /></div>
       

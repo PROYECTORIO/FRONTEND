@@ -7,7 +7,7 @@ const getToken = () => {
   return `Bearer ${localStorage.getItem('token')}`;
 };
 
-// CRUD PARA USUARIOS
+// CRUD PARA PROYECTOS
 
 export const obtenerProyectos = async (successCallback, errorCallback) => {
   const options = {
@@ -23,7 +23,7 @@ export const obtenerProyectos = async (successCallback, errorCallback) => {
 export const crearProyecto = async (data, successCallback, errorCallback) => {
   const options = {
     method: 'POST',
-    url: `${baseURL}/proyecto/`,
+    url: `${baseURL}/proyectos/`,
     headers: { 'Content-Type': 'application/json', Authorization: getToken() },
     data,
   };
@@ -33,7 +33,7 @@ export const crearProyecto = async (data, successCallback, errorCallback) => {
 export const editarProyecto = async (id, data, successCallback, errorCallback) => {
   const options = {
     method: 'PATCH',
-    url: `${baseURL}/proyecto/${id}/`,
+    url: `${baseURL}/proyectos/${id}/`,
     headers: { 'Content-Type': 'application/json', Authorization: getToken() },
     data,
   };

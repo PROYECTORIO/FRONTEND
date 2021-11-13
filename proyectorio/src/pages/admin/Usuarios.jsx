@@ -233,7 +233,7 @@ const FilaUsuarios = ({usuario, setEjecutarConsulta})  => {
               name='estado'
               required
               onChange ={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, estado: e.target.value })}
-              defaultValue={infoNuevoUsuario.rol}>
+              defaultValue={infoNuevoUsuario.estado}>
                 <option disabled value={0}>
                 Seleccione Estado
                 </option>
